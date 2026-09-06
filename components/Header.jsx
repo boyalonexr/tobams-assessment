@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, User, X } from "lucide-react";
 
@@ -132,7 +133,7 @@ export default function Header() {
       {mobileOpen && (
         <div
           id="mobile-navigation"
-          className="w-full border-t border-brand-dark/10 bg-white px-6 py-6"
+          className="absolute z-20 w-full bg-white px-6 py-6"
         >
           <nav aria-label="Mobile navigation">
             <ul className="flex flex-col gap-5">
