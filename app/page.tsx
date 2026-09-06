@@ -1,11 +1,14 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import contentImg1 from "@/public/content1.jpg"
-import contentImg2 from "@/public/content2.jpg"
-import contentImg3 from "@/public/content3.jpg"
 import Learning from "@/components/LearningManagementSystem";
-
 import ContentSection from "@/components/ContentSection";
+import CtaBanner from "@/components/CtaBanner"
+import Testimonials from "@/components/Testimonials";
+import Footer from "@/components/Footer";
+
+import contentImg1 from "@/public/content1.jpg";
+import contentImg2 from "@/public/content2.jpg";
+import contentImg3 from "@/public/content3.jpg";
 
 const contents = [
   {
@@ -20,6 +23,7 @@ const contents = [
       "Customised Training",
     ],
     image: contentImg1,
+    imageBorder: "rounded-[3rem]",
   },
   {
     title: "Personalised Individual Training",
@@ -35,6 +39,7 @@ const contents = [
     ],
     image: contentImg2,
     reverse: true,
+    imageBorder: "rounded-tl-[3rem] rounded-xl",
   },
   {
     title: "Capacity Development",
@@ -48,7 +53,8 @@ const contents = [
       "Collaborative Learning Environment",
       "Ongoing Support and Resources",
     ],
-    image: contentImg3               ,
+    image: contentImg3,
+    imageBorder: "rounded-tl-[3rem] rounded-xl",
   },
 ];
 
@@ -59,14 +65,18 @@ export default function Home() {
       <Hero />
       <Learning />
       <main>
-        <div className="px-12">
-          <div className="space-y-24">
+        <div className="px-4 py-8 sm:px-6 lg:px-12">
+          <div className="space-y-8">
             {contents.map((content) => (
               <ContentSection key={content.title} {...content} />
             ))}
           </div>
         </div>
+        <CtaBanner />
+        <Testimonials />
       </main>
+
+      <Footer />
     </>
   );
 }
