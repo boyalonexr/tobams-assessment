@@ -1,36 +1,174 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tobams Group Frontend Assessment
 
-## Getting Started
+A responsive frontend implementation of the Tobams Group website, developed as part of a frontend development assessment.
 
-First, run the development server:
+The project focuses on accurately reproducing the provided design while maintaining responsive behavior across desktop, tablet, and mobile screen sizes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔗 [View Live Website](https://tobams-assessmentvictor.netlify.app)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is a responsive website implementation for Tobams Group, a consultancy firm focused on technology talent development, training, recruitment, and digital solutions.
 
-## Learn More
+The implementation includes:
 
-To learn more about Next.js, take a look at the following resources:
+- Responsive navigation
+- Hero section
+- Learning and Development section
+- Learning Management System section
+- Corporate Trainings section
+- Personalised Individual Training section
+- Capacity Development section
+- Call-to-action sections
+- Testimonials carousel/section
+- Responsive footer
+- Social media links
+- Contact information
+- Registered office information
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Next.js** – React framework for the application
+- **React** – Component-based UI development
+- **TypeScript** – Type-safe development
+- **Tailwind CSS** – Responsive styling and layout
+- **Lucide React** – UI icons
+- **React Icons** – Social and interface icons
+- **Next/Image** – Optimized image handling
+- **Netlify** – Deployment and hosting
 
-## Deploy on Vercel
+## Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Responsive Design
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The website is optimized for:
+
+- Mobile devices
+- Tablets
+- Desktop screens
+
+The layout adapts at different breakpoints to maintain usability and visual consistency.
+
+### Responsive Navigation
+
+The header contains:
+
+- Tobams Group logo
+- Desktop navigation
+- Account button
+- Take Assessment button
+- Mobile hamburger menu
+- Mobile navigation drawer
+- Responsive navigation actions
+
+The mobile navigation is constrained to the viewport to prevent unwanted horizontal scrolling.
+
+### Learning & Development
+
+The main content presents different learning and development services, including:
+
+- Learning Management System
+- Corporate Trainings
+- Personalised Individual Training
+- Capacity Development
+
+Each section contains supporting content, imagery, and responsive layouts.
+
+### Testimonials
+
+A testimonial section showcases client feedback with:
+
+- Client images
+- Names
+- Job positions
+- Testimonial content
+- Responsive layout
+
+### Call-to-Action
+
+The website includes CTA sections encouraging visitors to:
+
+- Book a consultation
+- Get in touch
+- Explore Tobams Group services
+
+### Responsive Footer
+
+The footer contains:
+
+- Tobams Group information
+- Social media icons
+- What We Do links
+- Company links
+- Solution links
+- Registered offices
+- Contact information
+- Privacy Policy
+- Cookies Policy
+- Terms and Conditions
+- Copyright information
+
+The footer was specifically structured to adapt across screen sizes:
+
+**Mobile**
+- Single-column layout
+- Stacked content
+- Stacked registered office information
+
+**Tablet**
+- Two-column navigation layout
+
+**Desktop**
+- Four-column navigation layout
+- United Kingdom and Nigeria offices displayed side-by-side
+- Contact Information positioned on the far right
+- Vertical divider separating office and contact information
+
+## Accessibility
+
+Accessibility considerations were included throughout the implementation.
+
+Examples include:
+
+- Descriptive `alt` text for images
+- `aria-label` attributes for icon buttons
+- `aria-expanded` for the mobile navigation
+- `aria-controls` connecting the menu button to the mobile navigation
+- Keyboard focus states
+- Semantic navigation elements
+- Proper button elements for interactive controls
+
+## Project Structure
+
+The project follows a component-based structure to keep the UI modular and maintainable.
+
+Example structure:
+
+```text
+.
+├── app/
+│   ├── page.tsx
+│   └── ...
+│
+├── components/
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── FooterCta.tsx
+│   ├── Testimonials.tsx
+│   ├── ContentSection.tsx
+│   ├── CtaBanner.tsx
+│   └── ...
+│
+├── public/
+│   ├── tobams-logo
+│   ├── images
+│   ├── instagram.png
+│   ├── linkedin.png
+│   └── ...
+│
+├── package.json
+├── tsconfig.json
+├── next.config.ts
+└── README.md

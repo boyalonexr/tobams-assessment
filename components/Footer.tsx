@@ -1,6 +1,9 @@
 import Link from "next/link";
-import { Phone, Mail } from "lucide-react";
-import { FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
+import Image from "next/image";
+import tobamsLogo from "../public/f110fd4f935cdabd8ef9636a8144267e4494e408.png";
+import { FaXTwitter, FaEnvelope, FaPhone } from "react-icons/fa6";
+import instagramIcon from "../public/instagram.png";
+import linkedinIcon from "../public/linkedin.png";
 import FooterCta from "./FooterCta";
 
 const whatWeDo = [
@@ -36,14 +39,21 @@ const solution = [
   "Join Our Slack Community",
 ];
 
-function FooterLinkList({ title, links }: { title: string; links: string[] }) {
+function FooterLinkList({
+  title,
+  links,
+}: {
+  title: string;
+  links: string[];
+}) {
   return (
     <div>
-      <h3 className="text-sm font-bold text-white">{title}</h3>
+      <h3 className="text-lg font-bold text-white">{title}</h3>
+
       <ul className="mt-4 flex flex-col gap-2.5">
         {links.map((link) => (
           <li key={link}>
-            <Link href="#" className="text-sm text-white/70 hover:text-white">
+            <Link href="#" className="text-sm text-white">
               {link}
             </Link>
           </li>
@@ -55,113 +65,180 @@ function FooterLinkList({ title, links }: { title: string; links: string[] }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-dark text-white">
+    <footer className="bg-[#11040E] text-white">
       <FooterCta />
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Main Navigation */}
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+          {/* Tobams Group */}
           <div>
-            <span className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-maroon">
-                <span className="h-3 w-3 rounded-full bg-brand-coral" />
-              </span>
-              <span className="text-lg font-bold leading-tight text-white">
-                TOBAMS
-                <span className="block text-[0.6rem] font-semibold tracking-[0.2em] text-white/70">
-                  GROUP
-                </span>
-              </span>
-            </span>
-            <p className="mt-4 text-sm leading-relaxed text-white/70">
+            <Image
+              src={tobamsLogo}
+              alt="Tobams Group Logo"
+              width={188}
+              height={72}
+              priority
+            />
+
+            <p className="text-[14px] leading-relaxed text-[#F8F8F8] lg:text-sm">
               Tobams Group is an innovative consultancy firm reshaping the
               future of tech talent development in Africa, specializing in
               talent acquisition, internships, and skill development with a
               global perspective.
             </p>
+
             <div className="mt-5 flex gap-3">
+              {/* LinkedIn */}
               <Link
                 href="#"
                 aria-label="Tobams Group on LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white transition-colors hover:bg-white/80"
               >
-                <FaLinkedin className="h-4 w-4" aria-hidden="true" />
+                <Image
+                  src={linkedinIcon}
+                  alt="LinkedIn"
+                  width={18}
+                  height={18}
+                  className="h-5 w-5 object-contain"
+                />
               </Link>
+
+              {/* Instagram */}
               <Link
                 href="#"
                 aria-label="Tobams Group on Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white transition-colors hover:bg-white/80"
               >
-                <FaInstagram className="h-4 w-4" aria-hidden="true" />
+                <Image
+                  src={instagramIcon}
+                  alt="Instagram"
+                  width={18}
+                  height={18}
+                  className="h-5 w-5 object-contain"
+                />
               </Link>
+
+              {/* X */}
               <Link
                 href="#"
                 aria-label="Tobams Group on X"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#11040E] transition-colors hover:bg-white/80"
               >
-                <FaTwitter className="h-4 w-4" aria-hidden="true" />
+                <FaXTwitter className="h-5 w-5" aria-hidden="true" />
               </Link>
             </div>
           </div>
 
+          {/* What We Do */}
           <FooterLinkList title="What We Do" links={whatWeDo} />
+
+          {/* Company */}
           <FooterLinkList title="Company" links={company} />
+
+          {/* Solution */}
           <FooterLinkList title="Solution" links={solution} />
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 border-t border-white/10 pt-8 sm:grid-cols-3">
-          <div>
-            <h3 className="text-sm font-bold text-white">Registered Offices</h3>
-            <div className="mt-4 space-y-4 text-sm text-white/70">
-              <div>
-                <p className="font-semibold text-brand-coral">United Kingdom</p>
-                <p className="mt-1">
-                  07451196 (Registered by Company House)
-                  <br />
-                  Vine Cottages, 235 North Street, Romford, Essex, United
-                  Kingdom, RM1 4QA
-                </p>
+        {/* Contact & Offices */}
+        <div className="my-6 border-y border-[#DDD0DA]/10">
+          <div className="my-6 rounded-lg bg-[#FFFFFF0F] p-6 lg:p-8">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+              {/* Registered Offices */}
+              <div className="order-2 lg:order-1 lg:w-2/3">
+                <h3 className="text-lg font-bold text-white">
+                  Registered Offices
+                </h3>
+
+                {/* UK and Nigeria */}
+                <div className="mt-4 grid grid-cols-1 gap-6 text-xs text-white/70 lg:grid-cols-2 lg:text-sm">
+                  {/* United Kingdom */}
+                  <div>
+                    <p className="text-sm font-semibold text-[#EF4353]">
+                      United Kingdom
+                    </p>
+
+                    <p className="leading-relaxed">
+                      07451196 (Registered by Company House)
+                      <br />
+                      Vine Cottages, 215 North Street, Romford, Essex, United
+                      Kingdom, RM1 4QA
+                    </p>
+                  </div>
+
+                  {/* Nigeria */}
+                  <div>
+                    <p className="text-sm font-semibold text-[#EF4353]">
+                      Nigeria
+                    </p>
+
+                    <p className="leading-relaxed">
+                      RC 1048722 (Registered by the Corporate Affairs
+                      Commission)
+                      <br />
+                      4, Muaz Close, Angwar-Rimi
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="font-semibold text-brand-coral">Nigeria</p>
-                <p className="mt-1">
-                  RC 1048722 (Registered by the Corporate Affairs Commission)
-                  <br />
-                  4, Muaz Close, Angwar-Rimi
-                </p>
+
+              {/* Contact Information */}
+              <div className="order-1 lg:order-2 lg:w-1/3 lg:border-b-0 lg:border-l lg:pl-8">
+                <h3 className="text-lg font-bold text-white">
+                  Contact Information
+                </h3>
+
+                <ul className="mt-4 space-y-3 text-sm text-white/70">
+                  <li>
+                    <a
+                      href="mailto:theteam@tobamsgroup.com"
+                      className="flex items-center gap-2.5 text-sm text-white"
+                    >
+                      <FaEnvelope
+                        className="h-4 w-4 shrink-0 text-[#EF4353]"
+                        aria-hidden="true"
+                      />
+                      theteam@tobamsgroup.com
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="tel:+447886600748"
+                      className="flex items-center gap-2.5 text-sm text-white"
+                    >
+                      <FaPhone
+                        className="h-4 w-4 shrink-0 text-[#EF4353]"
+                        aria-hidden="true"
+                      />
+                      +447886600748
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-
-          <div className="sm:col-span-2 sm:justify-self-end">
-            <h3 className="text-sm font-bold text-white">Contact Information</h3>
-            <ul className="mt-4 space-y-2.5 text-sm text-white/70">
-              <li>
-                <a href="mailto:theteam@tobamsgroup.com" className="flex items-center gap-2 hover:text-white">
-                  <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
-                  theteam@tobamsgroup.com
-                </a>
-              </li>
-              <li>
-                <a href="tel:+447886600748" className="flex items-center gap-2 hover:text-white">
-                  <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
-                  +44 7886 600748
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>Copyright &copy; Tobams Group. 2024. All rights reserved.</p>
-          <div className="flex gap-5">
-            <Link href="#" className="hover:text-white">
+        {/* Bottom Legal Links & Copyright */}
+        <div className="flex flex-col items-center gap-4 text-sm text-white lg:flex-row lg:justify-between">
+          <p className="order-2 w-81.75 text-center lg:order-1 lg:text-left">
+            Copyright &copy; Tobams Group. 2024. All rights reserved.
+          </p>
+
+          <div className="order-1 flex flex-col items-center gap-2 sm:flex-row sm:gap-6 lg:order-2">
+            <div className="flex gap-5">
+              <Link href="#" className="text-white underline">
+                Privacy Policy
+              </Link>
+
+              <Link href="#" className="text-white underline">
+                Cookies Policy
+              </Link>
+            </div>
+
+            <Link href="#" className="text-white underline">
               Terms and Conditions
-            </Link>
-            <Link href="#" className="hover:text-white">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="hover:text-white">
-              Cookies Policy
             </Link>
           </div>
         </div>

@@ -31,13 +31,13 @@ const testimonials = [
     quote:
       "Tobams Group has been instrumental in our talent acquisition journey. Their Tech Talent Solution service consistently connects us with the right professionals. Reliable and straightforward.",
   },
-   {
+  {
     name: "Aisha Yusuf",
     role: "CEO of Tech Innovations Inc.",
     avatar: avatarAisha,
     quote:
       "Tobams Group is a true partner in our journey to digital excellence. Their creativity and technical expertise have propelled our projects to new heights. Their work is top-notch, and the results speak for themselves. I can't recommend them enough!",
-  }
+  },
 ];
 
 export default function Testimonials() {
@@ -62,10 +62,10 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-375 px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+    <section className="bg-[#F9F9F9]">
+      <div className="mx-auto max-w-375 px-5 pt-12 pb-6 sm:px-8 sm:py-16 lg:px-12 mb-6  border-b border-b-[#696969]/10">
         {/* Section heading */}
-        <h2 className="text-center text-xl font-semibold tracking-tight text-black sm:text-2xl md:text-4xl lg:text-6xl">
+        <h2 className="text-center text-xl font-semibold tracking-tight text-[#151515] sm:text-2xl md:text-4xl lg:text-6xl">
           Testimonials
         </h2>
 
@@ -80,11 +80,13 @@ export default function Testimonials() {
               data-card
               className="
                 flex
-                min-h-[280px]
+                min-h-56.5
                 w-full
                 shrink-0
                 snap-start
                 flex-col
+                rounded-xl
+                justify-center
                 rounded-tl-xl
                 rounded-bl-xl
                 border-l-2
@@ -93,11 +95,11 @@ export default function Testimonials() {
                 px-5
                 py-6
                 shadow-[0_2px_15px_rgba(0,0,0,0.04)]
-                sm:min-h-[265px]
+                sm:min-h-66.25
                 sm:w-[calc((100%-48px)/3.1)]
                 sm:px-7
                 sm:py-6
-                lg:min-h-[265px]
+                lg:min-h-61
               "
             >
               {/* Customer information */}
@@ -136,11 +138,11 @@ export default function Testimonials() {
             onClick={() => scrollByCard("prev")}
             aria-label="Previous testimonial"
             className="
-              flex h-12 w-12
-              items-center justify-center
-              rounded-xl
-              bg-[#fbe7e9]
-              text-[#ed3f5b]
+              flex h-7 w-7 md:w-8 md:h-8
+              items-center md:rounded-lg justify-center
+              rounded-sm
+              bg-[#F043541A]
+              text-[#EF4353]
               transition-colors
               hover:bg-[#f8dadd]
               focus:outline-none
@@ -161,10 +163,10 @@ export default function Testimonials() {
             onClick={() => scrollByCard("next")}
             aria-label="Next testimonial"
             className="
-              flex h-12 w-12
+              flex h-7 w-7 md:w-8 md:h-8
               items-center justify-center
-              rounded-xl
-              bg-[#fbe7e9]
+              rounded-sm md:rounded-lg
+              bg-[#F043541A]
               text-[#ed3f5b]
               transition-colors
               hover:bg-[#f8dadd]
